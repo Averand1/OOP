@@ -31,7 +31,4 @@ item3 = Item("Cable", 10, 5)
 item4 = Item("Mouse", 50, 5)
 item5 = Item("Keyboard", 75, 5)
 
-#print(Item.all) #Shows memory address of all itemx objects
-
-for instances in Item.all:
-    print(instances.name)
+print(Item.all) #Shows memory address of all itemx objects
