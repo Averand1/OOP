@@ -20,4 +20,3 @@ item2 = Item("Laptop", 1000, 3)
 
 
 
-
