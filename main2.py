@@ -52,11 +52,26 @@ class Item:
     def __repr__(self):
         return f"Item('{self.name}', {self.price}, {self.quantity})"
 
-#Inherticane
+#Inheritance
 class Phone(Item):
-    pass
+    all = []
+    def __init__(self, name:str, price:float, quantity=0, broken_phones=0): 
+        #Call to super function to have access to all attributes / method
+        super().__init__(
+            name, price, quantity
+        )
+        # run validations to receieved arguments
+        assert price >=0, f"Price {price} is not greater or equal to zero"
+        assert quantity >= 0, f"Quantity {quantity} is not greater or equal to zero"
+        assert broken_phones >= 0, f"Broken phones {broken_phones} is not greater or equal to zero"
+        # Assign to self object
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+        self.broken_phones = broken_phones
+        
+        # Actions to execute
+        Phone.all.append(self)
 
 phone1 = Phone("JSPhone", 500, 5)
-phone1.broken_phones = 1
 phone2 = Phone("JSPhone2", 700, 5)
-phone2.broken_phones = 1
