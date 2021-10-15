@@ -26,13 +26,18 @@ class Item:
     @classmethod
     def instantiate_self_csv(cls):
         with open('items.csv', 'r') as f:
-            reader = csv.DictReader(f)
-            items = list(reader)
+            reader = csv.DictReader(f) #list of dictionaries
+            items = list(reader) #converts to list
         
         for item in items:
-            print(item)
+            Item(
+                name=item.get('name'),
+                price=int(item.get('price')),
+                quantity=int(item.get('quantity')),
+            )
 
     def __repr__(self):
         return f"Item('{self.name}', {self.price}, {self.quantity})"
 
-
+Item.instantiate_self_csv()
+print(f"\n{Item.all}")
