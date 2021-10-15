@@ -50,7 +50,7 @@ class Item:
 
 
     def __repr__(self):
-        return f"Item('{self.name}', {self.price}, {self.quantity})"
+        return f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
 
 #Inheritance
 class Phone(Item):
@@ -73,5 +73,7 @@ class Phone(Item):
         # Actions to execute
         Phone.all.append(self)
 
-phone1 = Phone("JSPhone", 500, 5)
-phone2 = Phone("JSPhone2", 700, 5)
+phone1 = Phone("JSPhone1", 500, 5, 1)
+
+print(Item.all)
+print(Phone.all)
