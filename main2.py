@@ -36,8 +36,27 @@ class Item:
                 quantity=int(item.get('quantity')),
             )
 
+    @staticmethod
+    def is_integer(num):
+        #We will count out decimal ending with point 0
+        #For i.e: 5.0, 12.0
+        if isinstance(num, float):
+            # Count out the floats that are point zero
+            return num.is_integer()
+        elif isinstance(num, int):
+            return True
+        else:
+            return False
+
+
     def __repr__(self):
         return f"Item('{self.name}', {self.price}, {self.quantity})"
 
-Item.instantiate_self_csv()
-print(f"\n{Item.all}")
+#Inherticane
+class Phone(Item):
+    pass
+
+phone1 = Phone("JSPhone", 500, 5)
+phone1.broken_phones = 1
+phone2 = Phone("JSPhone2", 700, 5)
+phone2.broken_phones = 1
