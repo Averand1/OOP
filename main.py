@@ -1,7 +1,7 @@
-from phone import Phone
+from keyboard import Keyboard
 
 #Problem will be channging returned output of readonlyname function (ln 8)
-item1 =  Phone("MyItem", 750, 6)
+item1 =  Keyboard ("MyItem", 750, 6)
 
 #item1.name = "OtherItem" #Try using _ before name if you want to set some value (self.__name = "YourValue")
 # item1.apply_increment(0.2)
