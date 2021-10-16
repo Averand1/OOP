@@ -19,7 +19,15 @@ class Item:
     @property
     #Property decorator: Read-Only attributes
     def name(self):
+        print("You are trying to get name")
         return self.__name
+
+    @name.setter
+    def name(self, value):
+        if len(value) > 10:
+            raise Exception("The name is too long")
+        else:
+            self.__name = value
 
     def calculate_total_price(self):
         return self.price * self.quantity
@@ -56,6 +64,6 @@ class Item:
     def __repr__(self):
         return f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
 
-    @property
+    @property ##Changes things to read only attribute, use @name.setter to set value
     def read_only_name(self):
         return "AAA"
