@@ -9,12 +9,17 @@ class Item:
         assert quantity >= 0, f"Quantity {quantity} is not greater or equal to zero"
 
         # Assign to self object
-        self.name = name
+        self.__name = name  #can't set value when Read Only attribute is made that's why we use _name
         self.price = price
         self.quantity = quantity
         
         # Actions to execute
         Item.all.append(self)
+
+    @property
+    #Property decorator: Read-Only attributes
+    def name(self):
+        return self.__name
 
     def calculate_total_price(self):
         return self.price * self.quantity
@@ -50,3 +55,7 @@ class Item:
 
     def __repr__(self):
         return f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
+
+    @property
+    def read_only_name(self):
+        return "AAA"
