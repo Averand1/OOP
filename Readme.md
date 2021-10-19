@@ -6,7 +6,7 @@ Use __init__(self, attributes) so that you can make multiple objects with same a
 
 You can put what DataType You want as input in __init__ by using (self, attribute: DataType) like str or float
 
-f" HEllo {string literal}" in python
+f"Hello {string literal}" in python
 
 with Assert you can accept input which passes some specific condition
 
